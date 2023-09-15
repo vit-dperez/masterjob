@@ -12,7 +12,7 @@ pipeline{
             steps {
                 script {
                         if (params.api1){
-                            build wait: false, job: 'mule/mule-1-api'
+                            build wait: false, job: '/mule/mule-1-api'
                         }
                         if (params.api2){
                             echo "run api2 job"
