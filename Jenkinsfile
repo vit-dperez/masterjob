@@ -15,10 +15,10 @@ pipeline{
                             build wait: false, job: '/mule/mule-1-api'
                         }
                         if (params.api2){
-                            echo "run api2 job"
+                            build wait: false, job: '/mule/mule-2-api'
                         }
                         if (params.api3){
-                            echo "run api3 job"
+                            build wait: false, job: '/mule/mule-3-api'
                         }
                 }
             }
