@@ -1,10 +1,11 @@
 pipeline{
-     agent { label 'ubuntu'}
+    agent { label 'ubuntu'}
     parameters {
         booleanParam(name: 'api1', defaultValue: false, description: '........')
         booleanParam(name: 'api2', defaultValue: false, description: '........')
         booleanParam(name: 'api3', defaultValue: false, description: '........')
     }
+    options{buildDiscarder(logRotator(numToKeepStr: '3')) }}
 
     stages {
 
