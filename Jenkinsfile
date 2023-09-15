@@ -5,7 +5,7 @@ pipeline{
         booleanParam(name: 'api2', defaultValue: false, description: '........')
         booleanParam(name: 'api3', defaultValue: false, description: '........')
     }
-    options{buildDiscarder(logRotator(numToKeepStr: '3')) }}
+    options{buildDiscarder(logRotator(numToKeepStr: '3')) }
 
     stages {
 
