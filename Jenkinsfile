@@ -41,19 +41,19 @@ pipeline{
             steps {
                 script {
                         if (params.api1){
-                            build wait: false, job: '/mule/mule-1-api' 
+                            build wait: false, job: '/mule/mule-1-api', parameters: [string(name: 'env', value: "${params.env}"), string(name: 'region', value: "${params.region}"), gitParameter(name: 'BRANCH', value: "${params.BRANCH}")]}
                         }
                         if (params.api2){
-                            build wait: false, job: '/mule/mule-2-api'
+                            build wait: false, job: '/mule/mule-2-api', parameters: [string(name: 'env', value: "${params.env}"), string(name: 'region', value: "${params.region}"), gitParameter(name: 'BRANCH', value: "${params.BRANCH}")]}
                         }
                         if (params.api3){
-                            build wait: false, job: '/mule/mule-3-api'
+                            build wait: false, job: '/mule/mule-3-api', parameters: [string(name: 'env', value: "${params.env}"), string(name: 'region', value: "${params.region}"), gitParameter(name: 'BRANCH', value: "${params.BRANCH}")]}
                         }
                         if (params.api4){
-                            build wait: false, job: '/mule/mule-4-api'
+                            build wait: false, job: '/mule/mule-4-api', parameters: [string(name: 'env', value: "${params.env}"), string(name: 'region', value: "${params.region}"), gitParameter(name: 'BRANCH', value: "${params.BRANCH}")]}
                         }
                         if (params.api5){
-                            build wait: false, job: '/mule/mule-5-api'
+                            build wait: false, job: '/mule/mule-5-api', parameters: [string(name: 'env', value: "${params.env}"), string(name: 'region', value: "${params.region}"), gitParameter(name: 'BRANCH', value: "${params.BRANCH}")]}
                         }
                 }
             }
