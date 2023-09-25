@@ -20,21 +20,18 @@ def paramsListEnd= [
 
 properties([
     parameters(
-        paramsListStart + paramsListEnd
+        paramsListStart + paramsListEnd +
+        booleanParam(name: 'api1', defaultValue: false, description: '........') +
+        booleanParam(name: 'api2', defaultValue: false, description: '........') +
+        booleanParam(name: 'api3', defaultValue: false, description: '........') +
+        booleanParam(name: 'api4', defaultValue: false, description: '........') +
+        booleanParam(name: 'api5', defaultValue: false, description: '........')
     )
 ])
 
 pipeline{
     agent { label 'ubuntu'}
-    parameters {
-        booleanParam(name: 'api1', defaultValue: false, description: '........')
-        booleanParam(name: 'api2', defaultValue: false, description: '........')
-        booleanParam(name: 'api3', defaultValue: false, description: '........')
-        booleanParam(name: 'api4', defaultValue: false, description: '........')
-        booleanParam(name: 'api5', defaultValue: false, description: '........')
-    }
     options{buildDiscarder(logRotator(numToKeepStr: '3')) }
-
     stages {
 
         stage('Deploy api') {
